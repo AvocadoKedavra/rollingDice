@@ -33,7 +33,6 @@ bot.onText(/^\/start/, function onPhotoText(msg) {
 
 bot.onText(/^\/roll/, function onPhotoText(msg) {
     console.log(moment().format('HH:mm:ss DD-MM-YYYY') + " - /rollA command"+ " " + msg.from.id + " " + msg.from.username+ " " + msg.from.first_name);
-git remote -v
 
     let dices = getRollDices();
     let author = msg.from.username === undefined ? msg.from.first_name : "@" + msg.from.username;
