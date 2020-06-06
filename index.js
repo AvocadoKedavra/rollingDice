@@ -34,10 +34,9 @@ bot.onText(/^\/start/, function onPhotoText(msg) {
 bot.onText(/^\/roll/, function onPhotoText(msg) {
     console.log(moment().format('HH:mm:ss DD-MM-YYYY') + " - /rollA command"+ " " + msg.from.id + " " + msg.from.username+ " " + msg.from.first_name);
 
-    let dices = getRollDices();
     let author = msg.from.username === undefined ? msg.from.first_name : "@" + msg.from.username;
 
-    sendMessage(msg.chat.id, "🎲🎲 *" + author + "*" + currentLocale.hasRolled + " " + dices, MessageType.Markdown)
+    sendMessage(msg.chat.id, "🎲🎲 *" + author + "*" + currentLocale.hasRolled + " " + getRandomDiceRoll(), MessageType.Markdown)
         .catch(logError);
 });
 
@@ -77,12 +76,6 @@ function sendMessage(chatId, text, type) {
 
 function getRandomDiceRoll() {
     return distribution(engine);
-}
-
-function getRollDices() {
-    return {
-       getRandomDiceRoll();
-    };
 }
 
 function logError(error) {
