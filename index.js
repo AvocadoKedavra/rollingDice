@@ -36,7 +36,7 @@ bot.onText(/^\/roll/, function onPhotoText(msg) {
 
     let author = msg.from.username === undefined ? msg.from.first_name : "@" + msg.from.username;
 
-    sendMessage(msg.chat.id, "🎲🎲 *" + author + "*" + currentLocale.hasRolled + " " + getRandomDiceRoll(), MessageType.Markdown)
+    sendMessage(msg.chat.id, "🎲🎲 *" + author + "*" + currentLocale.hasRolled + getRandomDiceRoll(), MessageType.Markdown)
         .catch(logError);
 });
 
